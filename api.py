@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import chromadb
 from chromadb.config import Settings
 
 app = Flask(__name__)
+CORS(app)
 
 client = chromadb.Client(
     Settings(chroma_db_impl="duckdb+parquet", persist_directory="db/"))
