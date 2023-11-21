@@ -53,13 +53,6 @@ def createEmbeddings(mongo, moviesCollection):
 
 
 if __name__ == "__main__":
-    # mongo = MongoSoftware()
+    mongo = MongoSoftware()
     moviesCollection = initChroma()
-    # createEmbeddings(mongo, moviesCollection)
-    result = moviesCollection.query(
-        query_texts=[
-            "Recommend me movies of the year 2000 with the genre comedy"],
-        n_results=3
-    )
-
-    print(result)
+    createEmbeddings(mongo, moviesCollection)
